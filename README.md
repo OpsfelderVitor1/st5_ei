@@ -47,10 +47,10 @@ The project incorporates advanced concepts in telecommunications, data processin
 ### Authors 
 This project was a collaborative effort developed by a team of students, this is my own repository for the project, the original repository is in another colleague account
 
-Vitor Opsfelder Estanislau
-Guilherme Mertens
-Lucas Martins Fernandes
-Max Lee
+Authors: Vitor Opsfelder Estanislau,
+Guilherme Mertens,
+Lucas Martins Fernandes,
+Max Lee,
 Qi Yang Er 
 ### Hardware Architecture
 
