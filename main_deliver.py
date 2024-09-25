@@ -1,3 +1,37 @@
+"""
+This module implements a control system for an autonomous vehicle, integrating different components of perception, control, and decision-making.
+
+Imported Modules:
+- Perception.camera: manages the capture of images from the camera.
+- Perception.line_detection: performs line detection on captured images.
+- Control.stanley_controller: implements the Stanley controller for navigation.
+- Control.pid_control: provides a PID controller for motion adjustments.
+- arduino_interface: interface for communication with the Arduino.
+- Decision.state_machine: manages the states of the system.
+- Control.high_level_controller: coordinates high-level actions of the vehicle.
+- Decision.mission_planner: plans the mission and generates the vehicle's trajectory.
+- Perception.corner_detection: detects corners in the images.
+- Perception.obstacle_detection: identifies obstacles in the vehicle's path.
+- multiprocessing: utilizes multiple processes to perform tasks simultaneously.
+
+Main Functions:
+- run_obstacle_detection(detected_obstacle_queue, obstacle_queue):
+    Function that executes obstacle detection. It retrieves information about detected obstacles from an input queue and places the results in an output queue.
+
+- run_line_detection(line_image_queue, line_queue):
+    Function that executes line detection on images received from a queue. The detection result is placed in a queue for further processing.
+
+- run_corner_detection(corner_image_queue, corner_queue):
+    Function that executes corner detection on images received from a queue. The results are placed in a queue for use in other parts of the system.
+
+The entry point of the module is the `if __name__ == "__main__":` block, which initializes all components and manages the control logic of the autonomous vehicle.
+
+The system operates in a continuous loop, where it checks the current state of the system and executes appropriate actions based on line detection, corner detection, and obstacle detection. The vehicle's state is managed by a state machine, which determines the next step to be executed.
+
+The vehicle interacts with the environment through visual feature detection and obstacle recognition, using control algorithms to perform maneuvers and reach specific destinations.
+"""
+
+
 from Perception.camera import Camera
 from Perception.line_detection import LineDetection
 from Control.stanley_controller import StanleyController
